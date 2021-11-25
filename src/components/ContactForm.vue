@@ -56,6 +56,6 @@
 }
 .contact-form__message--textbox {
   height: 40vh;
-  width: 50vw;
+  width: 70vw;
 }
 </style>
