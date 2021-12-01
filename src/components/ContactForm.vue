@@ -3,7 +3,6 @@
     <h3>Contact Us!</h3>
 
     <div class="contact-form__firstname">
-      <label>First Name</label>
       <input
         type="text"
         name="firstname"
@@ -12,16 +11,14 @@
       />
     </div>
     <div class="contact-form__lastname">
-      <label>Last Name</label>
       <input
         type="text"
         name="lastname"
         placeholder="Last Name"
-        v-model="form.lastame"
+        v-model="form.lastname"
       />
     </div>
     <div class="contact-form__email">
-      <label>Email</label>
       <input
         type="text"
         name="email"
@@ -30,7 +27,6 @@
       />
     </div>
     <div class="contact-form__message">
-      <label>Message</label>
       <input
         class="contact-form__message--textbox"
         type="text"
@@ -58,7 +54,7 @@ export default {
 
       methods: {
         submit_form() {
-          alert(`Thank you for your message, ${this.firstname}!`);
+          alert(`Thank you for your message, ${this.form.firstname}!`);
         },
       },
     };
