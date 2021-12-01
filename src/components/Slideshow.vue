@@ -63,8 +63,8 @@ export default {
 <style>
 .slideshow {
   position: relative;
-  width: 40vw;
-  height: 50vh;
+  width: 30vw;
+  height: 51vh;
 }
 
 .slideshow:hover .slideshow__caption {
