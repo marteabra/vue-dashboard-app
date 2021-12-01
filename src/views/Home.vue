@@ -1,7 +1,8 @@
 <template>
-  <div>HOMEPAGE</div>
-  <ContactForm />
-  <Slideshow />
+  <div class="homepage">
+    <ContactForm />
+    <Slideshow class="homepage__slideshow" />
+  </div>
 </template>
 
 <script>
@@ -17,4 +18,12 @@ export default {
 </script>
 
 <style>
+.homepage {
+  display: flex;
+  margin-top: 3em;
+}
+
+.homepage__slideshow {
+  margin-top: 2.8em;
+}
 </style>

@@ -12,9 +12,6 @@
           :src="currentSlide.file"
           :alt="currentSlide.title"
         />
-        <figcaption class="slideshow__caption">
-          {{ currentSlide.caption }}
-        </figcaption>
       </figure>
     </div>
 
@@ -92,10 +89,11 @@ export default {
 .slideshow__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.slideshow__caption {
+/*      DROPPE FIGCAPTION???    */
+/*.slideshow__caption {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -105,7 +103,7 @@ export default {
   padding: 0.5em;
   background: brown;
   opacity: 0;
-}
+}*/
 
 .slideshow__buttons {
   position: absolute;
@@ -119,10 +117,13 @@ export default {
 }
 
 .slideshow__button {
-  padding: 0.5em;
+  padding: 0.3em;
   text-transform: uppercase;
-  color: black;
-  background: white;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  border: 1px solid black;
 }
 
 .slideshow__dots {
@@ -142,5 +143,7 @@ export default {
   display: block;
   border-radius: 100%;
   margin-left: 10px;
+  border: 1px solid black;
+  background-color: black;
 }
 </style>
