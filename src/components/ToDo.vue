@@ -1,14 +1,16 @@
 <template>
-  <div class="todo">
-    <div class="todo__title">{{ title }}</div>
+  <div class="todo-container">
+    <div class="todo">
+      <div class="todo__title">{{ title }}</div>
 
-    <hr class="todo__break" />
-    <div class="todo__task" v-for="task in tasks">
-      <button class="todo__task--done" aria-label="Done"></button>
-      <div>{{ task.text }}</div>
-      <button class="todo__task--remove-task" aria-label="Remove">X</button>
+      <hr class="todo__break" />
+      <div class="todo__task" v-for="task in tasks">
+        <button class="todo__task--done" aria-label="Done"></button>
+        <div>{{ task.text }}</div>
+        <button class="todo__task--remove-task" aria-label="Remove">X</button>
+      </div>
+      <button @click="addTask" class="todo__add-task">+</button>
     </div>
-    <button @click="addTask" class="todo__add-task">+</button>
   </div>
 </template>
 
@@ -43,10 +45,17 @@ export default {
 </script>
 
 <style>
-.todo {
+.todo-container {
+  background: indianred;
   position: relative;
-  height: 51vh;
   width: 30vw;
+  padding: 1em;
+}
+
+.todo {
+  position: absolute;
+  height: 50vh;
+  width: 28vw;
   background: lightgray;
 }
 

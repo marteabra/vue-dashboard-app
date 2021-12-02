@@ -1,42 +1,44 @@
 <template>
   <div class="contact-form">
-    <h3>Contact Us!</h3>
+    <div class="contact-form__form">
+      <h3>Contact Us!</h3>
 
-    <div class="contact-form__firstname">
-      <input
-        type="text"
-        name="firstname"
-        placeholder="First Name"
-        v-model="form.firstname"
-      />
-    </div>
-    <div class="contact-form__lastname">
-      <input
-        type="text"
-        name="lastname"
-        placeholder="Last Name"
-        v-model="form.lastname"
-      />
-    </div>
-    <div class="contact-form__email">
-      <input
-        type="text"
-        name="email"
-        placeholder="Email"
-        v-model="form.email"
-      />
-    </div>
-    <div class="contact-form__message">
-      <input
-        class="contact-form__message--textbox"
-        type="text"
-        name="message"
-        placeholder="Your Message"
-        v-model="form.message"
-      />
-      <button @click="submit_form" class="contact-form__message--submit">
-        Submit
-      </button>
+      <div class="contact-form__firstname">
+        <input
+          type="text"
+          name="firstname"
+          placeholder="First Name"
+          v-model="form.firstname"
+        />
+      </div>
+      <div class="contact-form__lastname">
+        <input
+          type="text"
+          name="lastname"
+          placeholder="Last Name"
+          v-model="form.lastname"
+        />
+      </div>
+      <div class="contact-form__email">
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          v-model="form.email"
+        />
+      </div>
+      <div class="contact-form__message">
+        <input
+          class="contact-form__message--textbox"
+          type="text"
+          name="message"
+          placeholder="Your Message"
+          v-model="form.message"
+        />
+        <button @click="submit_form" class="contact-form__message--submit">
+          Submit
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -70,13 +72,15 @@ h3 {
 }
 
 .contact-form {
-  margin-left: 1em;
-  margin-top: 1em;
   width: 30vw;
+  background: indianred;
+  padding: 1em;
 }
 
 .contact-form__form {
   display: grid;
+  width: 28vw;
+  background: lightgrey;
 }
 
 .contact-form input {

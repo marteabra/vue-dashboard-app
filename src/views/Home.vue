@@ -25,17 +25,12 @@ export default {
 
 <style>
 .homepage {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
   margin-top: 3em;
   width: 100%;
-  justify-content: space-evenly;
-}
-
-.homepage__slideshow {
-  margin-top: 2.8em;
-}
-
-.homepage__todo {
-  margin-top: 2.8em;
+  align-self: center;
 }
 </style>

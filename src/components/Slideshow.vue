@@ -1,27 +1,29 @@
 <template>
   <div class="slideshow">
-    <div class="slideshow__buttons">
-      <button @click="previousImage" class="slideshow__button">&lt;</button>
-      <button @click="nextImage" class="slideshow__button">&gt;</button>
-    </div>
+    <div class="slideshow__content">
+      <div class="slideshow__buttons">
+        <button @click="previousImage" class="slideshow__button">&lt;</button>
+        <button @click="nextImage" class="slideshow__button">&gt;</button>
+      </div>
 
-    <div class="slideshow__slides">
-      <figure class="slideshow__slide">
-        <img
-          class="slideshow__img"
-          :src="currentSlide.file"
-          :alt="currentSlide.title"
-        />
-      </figure>
-    </div>
+      <div class="slideshow__slides">
+        <figure class="slideshow__slide">
+          <img
+            class="slideshow__img"
+            :src="currentSlide.file"
+            :alt="currentSlide.title"
+          />
+        </figure>
+      </div>
 
-    <div class="slideshow__dots">
-      <button
-        class="slideshow__dot"
-        @click="goToIndex(index)"
-        v-for="(slide, index) in slides"
-        :aria-label="`Go to image ${index + 1}`"
-      ></button>
+      <div class="slideshow__dots">
+        <button
+          class="slideshow__dot"
+          @click="goToIndex(index)"
+          v-for="(slide, index) in slides"
+          :aria-label="`Go to image ${index + 1}`"
+        ></button>
+      </div>
     </div>
   </div>
 </template>
@@ -64,7 +66,13 @@ export default {
 .slideshow {
   position: relative;
   width: 30vw;
-  height: 51vh;
+  background: indianred;
+  padding: 1em;
+}
+
+.slideshow__content {
+  position: relative;
+  height: 50vh;
 }
 
 .slideshow:hover .slideshow__caption {
