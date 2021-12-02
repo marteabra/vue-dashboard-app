@@ -1,8 +1,8 @@
 <template>
   <div class="homepage">
-    <ContactForm />
-    <Slideshow class="homepage__slideshow" />
     <ToDo class="homepage__todo" />
+    <Slideshow class="homepage__slideshow" />
+    <ContactForm />
   </div>
 </template>
 

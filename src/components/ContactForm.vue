@@ -51,18 +51,24 @@ export default {
         email: null,
         message: null,
       },
-
-      methods: {
-        submit_form() {
-          alert(`Thank you for your message, ${this.form.firstname}!`);
-        },
-      },
     };
+  },
+
+  methods: {
+    submit_form() {
+      alert(
+        `Thank you for your message, ${this.form.firstname}. We will get back to you as soon as possible!`
+      );
+    },
   },
 };
 </script>
 
 <style>
+h3 {
+  text-align: center;
+}
+
 .contact-form {
   margin-left: 1em;
   margin-top: 1em;
@@ -87,8 +93,15 @@ export default {
   align-items: flex-end;
 }
 .contact-form__message--textbox {
-  height: 30vh;
+  height: 28vh;
+  position: relative;
 }
+
+/*.contact-form__message--textbox input[type="text"::placeholder] {
+  position: absolute;
+  height: 100%;
+  top: 0;
+}*/
 
 .contact-form__message--submit {
   margin-top: 10px;

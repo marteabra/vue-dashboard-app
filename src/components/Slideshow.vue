@@ -145,5 +145,6 @@ export default {
   margin-left: 10px;
   border: 1px solid black;
   background-color: black;
+  font-size: 0.5em;
 }
 </style>
