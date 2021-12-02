@@ -97,11 +97,9 @@ h3 {
   position: relative;
 }
 
-/*.contact-form__message--textbox input[type="text"::placeholder] {
-  position: absolute;
-  height: 100%;
-  top: 0;
-}*/
+.contact-form__message--textbox input {
+  height: 10px;
+}
 
 .contact-form__message--submit {
   margin-top: 10px;

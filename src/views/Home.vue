@@ -3,6 +3,7 @@
     <ToDo class="homepage__todo" />
     <Slideshow class="homepage__slideshow" />
     <ContactForm />
+    <Table />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import ContactForm from "../components/ContactForm.vue";
 import Slideshow from "../components/Slideshow.vue";
 import ToDo from "../components/ToDo.vue";
+import Table from "../components/Table.vue";
 
 export default {
   components: {
     ContactForm,
     Slideshow,
     ToDo,
+    Table,
   },
 };
 </script>
