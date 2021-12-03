@@ -4,10 +4,21 @@
       <div class="todo__title">{{ title }}</div>
 
       <hr class="todo__break" />
-      <div class="todo__task" v-for="task in tasks">
-        <button class="todo__task--done" aria-label="Done"></button>
-        <div>{{ task.text }}</div>
-        <button class="todo__task--remove-task" aria-label="Remove">X</button>
+
+      <div class="todo__content">
+        <div class="todo__items">
+          <TodoItem
+            @test-event="onTestEvent"
+            v-for="task in pendingTasks"
+            :task="task"
+          />
+        </div>
+
+        <hr class="todo__separator" />
+
+        <div class="todo-items__done">
+          <Toodoitem v-for="task in doneTasks" :task="task" />
+        </div>
       </div>
       <button @click="addTask" class="todo__add-task">+</button>
     </div>
@@ -15,31 +26,54 @@
 </template>
 
 <script>
+import TodoItem from "../components/TodoItem.vue";
+
 export default {
+  components: {
+    TodoItem,
+  },
+
   data() {
     return {
       title: "MY LIST",
       tasks: [{ text: "This is a task", done: false }],
-      ui: {
-        clickMessage: "click to add a new task",
-      },
+      id: 0,
     };
   },
 
   computed: {
+    pendingTasks() {
+      return this.tasks.filter((task) => task.done === false);
+    },
+
     doneTasks() {
       return this.tasks.filter((task) => task.done === true);
     },
   },
 
   methods: {
-    addTask() {
-      this.task.push({ text: "new task", done: false });
+    onTestEvent(data) {
+      console.log("hei");
     },
 
-    removeTask() {},
+    addTask() {
+      this.tasks.push({ id: this.id, text: this.id, done: false });
+      this.id++;
+    },
 
-    markTaskAsDone() {},
+    removeTask(id) {
+      const taskIndex = this.tasks.findIndex((task) => task.id === id);
+      this.tasks.splice(taskIndex, 1);
+    },
+
+    markTaskAsDone() {
+      const taskIndex = this.tasks.findIndex((task) => task.id === id);
+      this.tasks[taskIndex].done = !this.tasks[taskIndex].done;
+    },
+
+    id() {
+      return Math.random().toString(36).slice(2);
+    },
   },
 };
 </script>
@@ -52,10 +86,16 @@ export default {
   padding: 1em;
 }
 
+.list-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .todo {
   position: absolute;
   height: 50vh;
-  width: 28vw;
+  width: 90%;
   background: lightgray;
 }
 
@@ -72,9 +112,9 @@ export default {
   padding: 0.5em;
 }
 
-.todo__task {
-  display: flex;
-  justify-content: space-between;
+.todo__items {
+  display: grid;
+  width: 100%;
   padding: 0.5em;
   background: white;
 }

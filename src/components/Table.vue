@@ -4,7 +4,7 @@
       <button class="current-sort" @click="toggleSortOrder">
         Sort: {{ sort.key }}
       </button>
-      <table>
+      <table class="table__content">
         <thead>
           <tr>
             <td><button @click="sortBy('firstname')">First Name</button></td>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-const tableData = `[{ "firstname": "Marte", "lastname": "Abrahamsen", "age": 24, "city": "Trondheim" }, { "firstname": "Mayoo", "lastname": "??", "age": 30, "city": "Oslo" }, { "firstname": "Kristine", "lastname": "Strømme", "age": 24, "city": "Oslo" }, { "firstname": "Ole", "lastname": "Hansen", "age": 45, "city": "Bergen" }, { "firstname": "Karen", "lastname": "Lund", "age": 16, "city": "Stavanger" }]`;
+const tableData = `[{ "firstname": "Marte", "lastname": "Abrahamsen", "age": 24, "city": "Trondheim" }, { "firstname": "Ellie", "lastname": "Abrha", "age": 23, "city": "Oslo" }, { "firstname": "Kristine", "lastname": "Strømme", "age": 24, "city": "Oslo" }, { "firstname": "Ole", "lastname": "Hansen", "age": 45, "city": "Bergen" }, { "firstname": "Karen", "lastname": "Lund", "age": 16, "city": "Stavanger" }, { "firstname": "Marie", "lastname": "Nilsen", "age": 11, "city": "Moss" }, { "firstname": "Ola", "lastname": "Nordmann", "age": 52, "city": "Oslo" }, { "firstname": "Kari", "lastname": "Nordmann", "age": 51, "city": "Oslo" }, { "firstname": "Ane", "lastname": "Åker", "age": 34, "city": "Telemark" }]`;
 
 export default {
   data() {
@@ -104,12 +104,12 @@ export default {
 <style>
 .table-container {
   background: indianred;
-  width: 33vw;
+  width: 30vw;
   padding: 1em;
 }
 
 .current-sort {
-  margin-bottom: 10px;
+  margin: 10px 0 0 10px;
   text-align: center;
   width: 100%;
   font-weight: bold;
@@ -119,22 +119,31 @@ export default {
   position: relative;
   background: white;
   border-collapse: collapse;
-  border: 1px solid black;
-  height: 51vh;
-  width: 30vw;
+  height: 100%;
+  width: 28vw;
+}
+
+.table__content {
+  margin-top: 10px;
+  position: relative;
 }
 
 .table thead {
   font-weight: bold;
+  background: grey;
+  width: 100%;
 }
 
 .table tr {
   border: 1px solid black;
 }
 
-.table thead {
-  background: grey;
+.table tbody {
+  position: inherit;
   width: 100%;
+  height: 100%;
+  margin-top: 15px;
+  height: 100%;
 }
 
 .table td {
