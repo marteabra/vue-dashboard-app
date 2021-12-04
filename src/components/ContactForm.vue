@@ -29,7 +29,6 @@
       </div>
       <div class="contact-form__message">
         <input
-          class="contact-form__message--textbox"
           type="text"
           name="message"
           placeholder="Your Message"
@@ -96,13 +95,13 @@ h3 {
   display: flex;
   align-items: flex-end;
 }
-.contact-form__message--textbox {
-  height: 28vh;
-  position: relative;
+
+.contact-form__message input {
+  height: 100px;
 }
 
-.contact-form__message--textbox input {
-  height: 10px;
+.contact-form__message input ::placeholder {
+  position: absolute;
 }
 
 .contact-form__message--submit {

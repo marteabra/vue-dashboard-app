@@ -3,24 +3,31 @@
     <div class="todo">
       <div class="todo__title">{{ title }}</div>
 
-      <hr class="todo__break" />
-
       <div class="todo__content">
         <div class="todo__items">
           <TodoItem
-            @test-event="onTestEvent"
+            @done-task="doneTask"
+            @remove-task="removeTask"
             v-for="task in pendingTasks"
             :task="task"
           />
         </div>
 
-        <hr class="todo__separator" />
+        <hr
+          class="todo__separator"
+          v-if="doneTasks.length > 0 && pendingTasks.length > 0"
+        />
 
-        <div class="todo-items__done">
-          <Toodoitem v-for="task in doneTasks" :task="task" />
-        </div>
+        <!--<div class="todo-items__done">
+          <Todoitem
+            @done-task="doneTask"
+            @remove-task="removeTask"
+            v-for="task in doneTasks"
+            :task="task"
+          />
+        </div>-->
       </div>
-      <button @click="addTask" class="todo__add-task">+</button>
+      <button @click="addTask" class="todo__add-task">+ Add new task</button>
     </div>
   </div>
 </template>
@@ -36,8 +43,7 @@ export default {
   data() {
     return {
       title: "MY LIST",
-      tasks: [{ text: "This is a task", done: false }],
-      id: 0,
+      tasks: [{ text: "", done: false }],
     };
   },
 
@@ -52,22 +58,21 @@ export default {
   },
 
   methods: {
-    onTestEvent(data) {
-      console.log("hei");
-    },
-
     addTask() {
-      this.tasks.push({ id: this.id, text: this.id, done: false });
-      this.id++;
+      this.tasks.push({ id: this.id(), text: "", done: false });
     },
 
-    removeTask(id) {
-      const taskIndex = this.tasks.findIndex((task) => task.id === id);
+    removeTask(task) {
+      const taskIndex = this.tasks.findIndex(
+        (currentTask) => task.id === currentTask.id
+      );
       this.tasks.splice(taskIndex, 1);
     },
 
-    markTaskAsDone() {
-      const taskIndex = this.tasks.findIndex((task) => task.id === id);
+    doneTask(task) {
+      const taskIndex = this.tasks.findIndex(
+        (currentTask) => currentTask.id === currentTask.id
+      );
       this.tasks[taskIndex].done = !this.tasks[taskIndex].done;
     },
 
@@ -117,6 +122,7 @@ export default {
   width: 100%;
   padding: 0.5em;
   background: white;
+  text-align: left;
 }
 
 .todo__task--remove-task {
@@ -137,7 +143,7 @@ export default {
 
 .todo__add-task {
   background-color: transparent;
-  font-size: 1.3em;
+  font-size: 1em;
   border: 0;
 }
 </style>
