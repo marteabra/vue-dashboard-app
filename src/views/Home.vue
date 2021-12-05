@@ -28,6 +28,11 @@ export default {
 </script>
 
 <style>
+template {
+  display: block;
+  align-content: center;
+}
+
 .homepage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -35,6 +40,6 @@ export default {
   grid-row-gap: 1em;
   margin-top: 3em;
   width: 100%;
-  align-self: center;
+  justify-content: center;
 }
 </style>
