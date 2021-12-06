@@ -1,13 +1,11 @@
 <template>
-  <header class="header">
-    <nav class="header__nav">
-      <span><RouterLink to="{ name: `home` }">Home</RouterLink></span>
-      <span><RouterLink to="{ name: `slideshow` }">Slideshow</RouterLink></span>
-      <span><RouterLink to="{ name: `table` }">Table</RouterLink></span>
-      <span><RouterLink to="{ name: `quiz` }">Quiz</RouterLink></span>
-      <span><RouterLink to="{ name: `todo` }">To do List</RouterLink></span>
-      <span><RouterLink to="{ name: `contact` }">Contact</RouterLink></span>
-    </nav>
+  <header class="topnav">
+      <span><RouterLink :to="{ name: 'home' }">Home</RouterLink></span>
+      <span><RouterLink :to="{ name: 'component', params: { component_id: 'slideshow' } }">Slideshow</RouterLink></span>
+      <span><RouterLink :to="{ name: 'component', params: { component_id:  'table' } }">Table</RouterLink></span>
+      <span><RouterLink :to="{ name: 'component', params: { component_id: 'quiz' } }">Quiz</RouterLink></span>
+      <span><RouterLink :to="{ name: 'component', params: { component_id: 'todo' } }">To do List</RouterLink></span>
+      <span><RouterLink :to="{ name: 'component', params: { component_id: 'contact' } }">Contact</RouterLink></span>
   </header>
 </template>
 
@@ -26,15 +24,36 @@ export default {
 </script>
 
 <style>
-.header__nav {
-  background: white;
-  position: relative;
+header {
+  width: auto;
   display: flex;
-  width: 100%;
+  padding: 0px 10px;
+  margin: 10px 10px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background-color:grey;
 }
 
-.header__nav span {
-  background: rgb(181, 181, 238);
-  position: absolute;
+span {
+  text-align: center;
+  padding: 0px 10px;
+  text-decoration: none;
+  font-size: 20px;
 }
+
+span:hover {
+  background-color: #ddd;
+}
+
+span:active {
+  background-color: purple;
+}
+
+
+span .router-link-active {
+  color: white
+
+}
+
 </style>
