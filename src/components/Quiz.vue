@@ -116,7 +116,7 @@ export default {
 
 .quiz {
    position: absolute;
-  height: 54vh;
+  height: 44vh;
   width: 90%;
   background: lightgray;
 }

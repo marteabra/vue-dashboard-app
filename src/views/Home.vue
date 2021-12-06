@@ -1,10 +1,6 @@
 <template>
   <div class="homepage">
     <Slideshow class="homepage__slideshow" /> 
-    <Table />
-    <Quiz />
-    <ToDo class="homepage__todo" />
-<<<<<<< Updated upstream
     <div class="homepage__infobox">
       <div class="homepage__infobox--content">
         <h3 class="content__title">HELLO</h3>
@@ -25,11 +21,9 @@
         </div>
       </div>
     </div>
-    <Slideshow class="homepage__slideshow" />
-    <Quiz />
     <Table />
-=======
->>>>>>> Stashed changes
+    <ToDo class="homepage__todo" />
+    <Quiz />
     <ContactForm />
   </div>
 </template>
