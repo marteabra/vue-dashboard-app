@@ -20,7 +20,7 @@
 export default {
   props: {
     //text: { type: String, default: "New Task" },
-    //done: { type: Boolean, default: false },
+    done: { type: Boolean, default: false },
     task: { type: Object },
   },
 
@@ -50,6 +50,15 @@ export default {
   margin: 10px;
   width: 100%;
   height: 20px;
+}
+
+.list-item__done {
+  background: grey;
+  border-radius: 50%;
+}
+
+.list-item__done--checked {
+  background: green;
 }
 
 .list-item__task :nth-child(1) {

@@ -17,15 +17,6 @@
           class="todo__separator"
           v-if="doneTasks.length > 0 && pendingTasks.length > 0"
         />
-
-        <!--<div class="todo-items__done">
-          <Todoitem
-            @done-task="doneTask"
-            @remove-task="removeTask"
-            v-for="task in doneTasks"
-            :task="task"
-          />
-        </div>-->
       </div>
       <button @click="addTask" class="todo__add-task">+ Add new task</button>
     </div>

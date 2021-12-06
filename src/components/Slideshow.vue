@@ -40,9 +40,17 @@ export default {
     return {
       index: 0,
       slides: [
-        { title: "Interior", caption: "Interior", file: "assets/interior.jpg" },
-        { title: "Bike", caption: "Bike", file: "assets/bike.jpg" },
-        { title: "Carlo", caption: "Carlo", file: "assets/carlo.jpg" },
+        {
+          title: "Interior",
+          caption: "Interior",
+          file: "/images/interior.jpg",
+        },
+        { title: "Bike", caption: "Bike", file: "/images/bike.jpg" },
+        {
+          title: "Carlo",
+          caption: "Carlo",
+          file: "/images/carlo.jpg",
+        },
       ],
     };
   },

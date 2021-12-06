@@ -4,7 +4,7 @@
     <Slideshow class="homepage__slideshow" />
     <ContactForm />
     <Table />
-    <NewQuiz />
+    <Quiz />
   </div>
 </template>
 
@@ -13,8 +13,7 @@ import ContactForm from "../components/ContactForm.vue";
 import Slideshow from "../components/Slideshow.vue";
 import ToDo from "../components/ToDo.vue";
 import Table from "../components/Table.vue";
-import Quiz from "../components/Quiz.vue"
-
+import Quiz from "../components/Quiz.vue";
 
 export default {
   components: {
@@ -22,7 +21,7 @@ export default {
     Slideshow,
     ToDo,
     Table,
-    NewQuiz,
+    Quiz,
   },
 };
 </script>
