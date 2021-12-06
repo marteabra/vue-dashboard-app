@@ -8,15 +8,10 @@
           <TodoItem
             @done-task="doneTask"
             @remove-task="removeTask"
-            v-for="task in pendingTasks"
+            v-for="task in tasks"
             :task="task"
           />
         </div>
-
-        <hr
-          class="todo__separator"
-          v-if="doneTasks.length > 0 && pendingTasks.length > 0"
-        />
       </div>
       <button @click="addTask" class="todo__add-task">+ Add new task</button>
     </div>
@@ -33,16 +28,12 @@ export default {
 
   data() {
     return {
-      title: "MY LIST",
-      tasks: [{ text: "", done: false }],
+      title: "TO DO LIST",
+      tasks: [],
     };
   },
 
   computed: {
-    pendingTasks() {
-      return this.tasks.filter((task) => task.done === false);
-    },
-
     doneTasks() {
       return this.tasks.filter((task) => task.done === true);
     },
@@ -62,7 +53,7 @@ export default {
 
     doneTask(task) {
       const taskIndex = this.tasks.findIndex(
-        (currentTask) => currentTask.id === currentTask.id
+        (currentTask) => currentTask.id === task.id
       );
       this.tasks[taskIndex].done = !this.tasks[taskIndex].done;
     },
@@ -82,17 +73,16 @@ export default {
   padding: 1em;
 }
 
-.list-item {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
 .todo {
   position: absolute;
   height: 50vh;
   width: 90%;
-  background: lightgray;
+  background: rgb(255, 255, 255);
+}
+
+.todo-content {
+  position: relative;
+  overflow: scroll;
 }
 
 .todo__title {
@@ -104,37 +94,15 @@ export default {
 .todo__add-task {
   position: absolute;
   bottom: 0;
-  right: 0;
+  width: 100%;
   padding: 0.5em;
+  font-size: 1em;
+  border: 0;
 }
 
 .todo__items {
   display: grid;
   width: 100%;
   padding: 0.5em;
-  background: white;
-  text-align: left;
-}
-
-.todo__task--remove-task {
-  border-radius: 5px;
-  background: grey;
-  height: 25px;
-  width: 25px;
-  border: 0;
-  font-size: 1em;
-}
-
-.todo__task--done {
-  border-radius: 100%;
-  border: 1px solid black;
-  height: 25px;
-  width: 25px;
-}
-
-.todo__add-task {
-  background-color: transparent;
-  font-size: 1em;
-  border: 0;
 }
 </style>

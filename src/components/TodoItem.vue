@@ -1,8 +1,8 @@
-<template>
+<template class="todo">
   <div class="list-item">
     <button
       @click="emitDone"
-      class="list-item__done"
+      :class="doneButtonClass"
       aria-label="Done"
     ></button>
 
@@ -19,9 +19,15 @@
 <script>
 export default {
   props: {
-    //text: { type: String, default: "New Task" },
-    done: { type: Boolean, default: false },
     task: { type: Object },
+  },
+
+  computed: {
+    doneButtonClass() {
+      return this.task.done
+        ? "list-item__done--green"
+        : "list-item__done--white";
+    },
   },
 
   methods: {
@@ -37,12 +43,42 @@ export default {
 </script>
 
 <style>
+.list-item {
+  display: flex;
+  overflow: scroll;
+  width: 100%;
+  justify-content: space-between;
+  background: rgb(189, 189, 189);
+}
+
+.list-item input {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  width: 90%;
+}
+
 .list-item button {
-  border: none;
   width: 28px;
   height: 20px;
   margin: 10px;
   font-weight: bold;
+}
+
+.list-item__done--green {
+  background: rgba(82, 201, 82, 0.8);
+}
+
+.list-item__done--white {
+  background: rgb(255, 255, 255);
+}
+
+.list-item button:nth-child(1) {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.list-item button:nth-child(3) {
+  border: none;
 }
 
 .list-item__task {
@@ -50,15 +86,6 @@ export default {
   margin: 10px;
   width: 100%;
   height: 20px;
-}
-
-.list-item__done {
-  background: grey;
-  border-radius: 50%;
-}
-
-.list-item__done--checked {
-  background: green;
 }
 
 .list-item__task :nth-child(1) {
@@ -69,15 +96,5 @@ export default {
 }
 .list-item__task :nth-child(3) {
   flex-grow: 1;
-}
-
-.list-item input {
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.6);
-  width: 90%;
-}
-
-.list-item__done--checked {
-  background: rgb(19, 143, 19);
 }
 </style>
