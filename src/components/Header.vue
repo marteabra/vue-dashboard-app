@@ -5,7 +5,7 @@
       <span><RouterLink :to="{ name: 'component', params: { component_id:  'table' } }">Table</RouterLink></span>
       <span><RouterLink :to="{ name: 'component', params: { component_id: 'quiz' } }">Quiz</RouterLink></span>
       <span><RouterLink :to="{ name: 'component', params: { component_id: 'todo' } }">To do List</RouterLink></span>
-      <span><RouterLink :to="{ name: 'component', params: { component_id: 'contact' } }">Contact</RouterLink></span>
+      <span><RouterLink :to="{ name: 'component', params: { component_id: 'contact' } }">Contact Us</RouterLink></span>
   </header>
 </template>
 
