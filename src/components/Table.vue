@@ -6,7 +6,7 @@
       </button>
       <table class="table__content">
         <thead>
-          <tr>
+          <tr class="table__buttons">
             <td><button @click="sortBy('firstname')">First Name</button></td>
             <td><button @click="sortBy('lastname')">Last Name</button></td>
             <td><button @click="sortBy('age')">Age</button></td>
@@ -103,8 +103,8 @@ export default {
 
 <style>
 .table-container {
-  background: indianred;
   width: 30vw;
+  height: 60vh;
   padding: 1em;
 }
 
@@ -113,6 +113,7 @@ export default {
   text-align: center;
   width: 100%;
   font-weight: bold;
+  font-size: 1em;
 }
 
 .table {
@@ -120,12 +121,16 @@ export default {
   background: white;
   border-collapse: collapse;
   height: 100%;
-  width: 28vw;
+  width: 100%;
 }
 
 .table__content {
   margin-top: 10px;
   position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: center;
 }
 
 .table thead {
@@ -134,24 +139,28 @@ export default {
   width: 100%;
 }
 
-.table tr {
-  border: 1px solid black;
-}
-
-.table tbody {
-  position: inherit;
-  width: 100%;
-  height: 100%;
-  margin-top: 15px;
-  height: 100%;
-}
-
-.table td {
-  padding: 0.5em;
+.table__buttons {
+  text-align: center;
+  border: none;
+  background: none;
 }
 
 .table button {
   border: none;
   background: none;
+  font-size: 0.8em;
+}
+
+.table tr {
+  border: 1px solid black;
+}
+
+.table tbody {
+  margin-top: 15px;
+  font-size: 0.8em;
+}
+
+.table td {
+  padding: 0.5em;
 }
 </style>

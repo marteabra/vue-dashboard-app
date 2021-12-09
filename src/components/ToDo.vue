@@ -1,8 +1,7 @@
 <template>
   <div class="todo-container">
+    <div class="todo__title">{{ title }}</div>
     <div class="todo">
-      <div class="todo__title">{{ title }}</div>
-
       <div class="todo__content">
         <div class="todo__items">
           <TodoItem
@@ -67,34 +66,36 @@ export default {
 
 <style>
 .todo-container {
-  background: indianred;
   position: relative;
   width: 30vw;
+  height: 60vh;
   padding: 1em;
+}
+
+.todo-content {
+  height: 300px;
 }
 
 .todo {
   position: absolute;
   height: 50vh;
   width: 90%;
-  background: rgb(255, 255, 255);
-}
-
-.todo-content {
-  position: relative;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .todo__title {
+  position: ;
+  margin-top: 0;
+  margin-bottom: 10;
+  width: 100%;
   text-align: center;
-  margin: 10px;
   font-size: 20px;
 }
 
 .todo__add-task {
   position: absolute;
-  bottom: 0;
   width: 100%;
+  margin-top: 20px;
   padding: 0.5em;
   font-size: 1em;
   border: 0;

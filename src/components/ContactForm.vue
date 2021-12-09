@@ -11,6 +11,7 @@
           v-model="form.firstname"
         />
       </div>
+
       <div class="contact-form__lastname">
         <input
           type="text"
@@ -19,6 +20,7 @@
           v-model="form.lastname"
         />
       </div>
+
       <div class="contact-form__email">
         <input
           type="text"
@@ -27,6 +29,7 @@
           v-model="form.email"
         />
       </div>
+
       <div class="contact-form__message">
         <input
           type="text"
@@ -34,7 +37,8 @@
           placeholder="Your Message"
           v-model="form.message"
         />
-        <button @click="submit_form" class="contact-form__message--submit">
+
+        <button @click="submit_form" class="contact-form__message-submit">
           Submit
         </button>
       </div>
@@ -71,8 +75,6 @@ h3 {
 }
 
 .contact-form {
-  width: 30vw;
-  background: indianred;
   padding: 1em;
 }
 
@@ -104,7 +106,7 @@ h3 {
   position: absolute;
 }
 
-.contact-form__message--submit {
+.contact-form__message-submit {
   margin-top: 10px;
 }
 </style>

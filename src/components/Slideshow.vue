@@ -2,7 +2,13 @@
   <div class="slideshow">
     <div class="slideshow__content">
       <div class="slideshow__buttons">
-        <button @click="previousImage" class="slideshow__button">&lt;</button>
+        <button
+          @click="previousImage"
+          class="slideshow__button"
+          src="/assets/next.svg"
+        >
+          &lt;
+        </button>
         <button @click="nextImage" class="slideshow__button">&gt;</button>
       </div>
 
@@ -51,6 +57,7 @@ export default {
           caption: "Carlo",
           file: "/images/carlo.jpg",
         },
+        { title: "Street", caption: "Street", file: "/images/street.jpg" },
       ],
     };
   },
@@ -80,17 +87,14 @@ export default {
 .slideshow {
   position: relative;
   width: 30vw;
-  background: indianred;
+  height: 60vh;
   padding: 1em;
 }
 
 .slideshow__content {
   position: relative;
-  height: 50vh;
-}
-
-.slideshow:hover .slideshow__caption {
-  opacity: 1;
+  height: 40vh;
+  width: 28vw;
 }
 
 .slideshow__slides {
@@ -99,7 +103,6 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: pink;
 }
 
 .slideshow_slide {
@@ -114,25 +117,12 @@ export default {
   object-fit: cover;
 }
 
-/*      DROPPE FIGCAPTION???    */
-/*.slideshow__caption {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 0.75em;
-  padding: 0.5em;
-  background: brown;
-  opacity: 0;
-}*/
-
 .slideshow__buttons {
   position: absolute;
-  top: 0;
-  bottom: 0;
   width: 100%;
   height: 100%;
+  top: 0;
+  bottom: 0;
   z-index: 10;
   display: flex;
   justify-content: space-between;
@@ -140,12 +130,11 @@ export default {
 
 .slideshow__button {
   padding: 0.3em;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1em;
+  font-weight: 600;
+  font-size: 1.5em;
   color: rgb(255, 255, 255);
-  background: rgb(0, 0, 0);
-  border: 1px solid black;
+  background: black;
+  border: none;
 }
 
 .slideshow__dots {
